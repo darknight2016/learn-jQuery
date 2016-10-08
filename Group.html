@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Group</title>
+
+	<style type="text/css">
+		div,
+		p,
+		strong{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<div>div</div>
+	<div>div</div>
+	<div>div</div>
+
+	<p>p</p>
+	<p>p</p>
+	<p>p</p>
+
+	<strong>strong</strong>
+	<strong>strong</strong>
+	<strong>strong</strong>
+	<script type="text/javascript" src="scripts/jquery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('div,p,strong').css('color','blue');
+		})
+	</script>
+</body>
+</html>

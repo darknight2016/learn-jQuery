@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>属性选择器</title>
+
+</head>
+<body>
+	<span title="num1">num1</span>
+	<span title="num2">num2</span>
+	<span title="num3">num3</span>
+	<span>num4</span>
+
+	<script type="text/javascript" src="scripts/jquery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('span[title]').css('color','red');
+			// num开头
+			$('span[title^=num]').css('color','green');
+			// num结尾
+			$('span[title$=3]').css('color','yellow');
+			$('span[title=num1]').css('color','blue');
+
+			$('span[title|=num]');//等于或者-号开头
+			$('span[title!=num]');//所有不等于
+			$('span[title~=num]');//空格
+			$('span[title*=num]');//包含子串
+			$('span[bbb][title*=num');//多属性选择器
+		});
+	</script>
+</body>
+</html>

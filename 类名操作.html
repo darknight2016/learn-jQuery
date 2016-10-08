@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>类名操作</title>
+	<script type="text/javascript" src="scripts/jquery.js"></script>
+	<style type="text/css">
+		.red{
+			color: red;
+		}
+
+		.bg{
+			background: #ffcccc;
+		}
+		.green{
+			color: green;
+		}
+	</style>
+
+</head>
+<body>
+	<div>yzp is handsome!</div>
+
+	<script type="text/javascript">
+		$('div').addClass('red').addClass('bg');
+		$('div').removeClass('bg red');
+
+		// toggleClass样式切换
+		$('div').click(function(){
+			$(this).toggleClass('red');
+		})
+
+		// toggleClass第二个参数
+		var count = 0;
+		$('div').click(function(){
+			$(this).toggleClass('red',count++ % 5 == 0);
+		})
+
+
+		$('div').click(function(){
+			$(this).toggleClass('red');
+			if($(this).hasClass('red')){
+				$(this).removeClass('green');
+			}else{
+				$(this).addClass('green');
+			}
+		});
+
+		// 类切换
+		$('div').click(function(){
+			$(this).toggleClass(function(){
+				return $(this).hasClass('red')?'green':'red';
+			})
+		})
+	</script>
+</body>
+</html>

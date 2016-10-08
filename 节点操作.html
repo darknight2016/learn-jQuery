@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>节点操作</title>
+	<script type="text/javascript" src="scripts/jquery.js"></script>
+
+</head>
+<body>
+	<div id="box">box</div>
+
+	<script type="text/javascript">
+		$(function(){
+			//创建节点
+			var test = $('<div id="test">test</div>');
+			// 插入节点
+			$('#box').append(test);
+		});
+
+		// 内部插入
+		append();//内部后面插入
+		append(function(){
+			//something
+		});
+		// 移入操作，不需要创建节点
+		appendTo();
+
+		// 前面插入
+		prepend();
+
+
+
+		// 外部插入
+		after(content);//向指定元素的外部插入节点
+		before(content);//向指定元素的前面插入节点
+		after(function(index,html){
+			//something;
+		});
+		before(function(index,html){
+			//something;
+		});
+
+		insertAfter();
+		insertBefore();
+	</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>元素及内容的操作</title>
+	<script type="text/javascript" src="scripts/jquery.js"></script>
+
+</head>
+<body>
+	<div id="box">
+		<strong>yzp is handsome</strong>
+	</div>
+	<input type="text">
+	<input type="radio" value="男">男
+	<input type="radio" value="女">女
+	<input type="checkbox" value="编程">编程
+
+	<script type="text/javascript">
+		$(function(){
+			$('#box').html();
+			$('#box').text();
+		});
+		// $('input').val('yzp is handsome');
+		$('input').val(['男','女']);
+	</script>
+</body>
+</html>

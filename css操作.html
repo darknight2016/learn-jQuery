@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css操作</title>
+	<script type="text/javascript" src="scripts/jquery.js"></script>
+
+</head>
+<body>
+	<div id="box" title="aaa" style="color: #ffcccc;">
+		yzp is handsom!
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			alert($('div').css('color'));
+			$('div').css('color','red');
+
+			// 获取多个样式
+			var box = $('div').css(['color','width','height']);
+			alert(box);
+			// 遍历对象数组
+			for(var i in box){
+				alert(i + ':' + box[i]);
+			}
+
+			// jQuery工具集
+			$.each(box,function(a,b){
+				alert(a + ':' + b);
+			});
+
+			$('div').each(function(index,element){
+				alert(index + '' + element);
+			});
+
+			// 多个css操作
+			$('div').css('color','red').css('background','blue');
+
+			$('div').css({
+				'color': 'red',
+				'background': 'blue'
+			});
+
+			$('div').css('color','red').css('width',function(index,value){
+				// parseInt方法操作css样式
+				return parseInt(value) - 500 + 'px';
+			});
+		});
+	</script>
+</body>
+</html>

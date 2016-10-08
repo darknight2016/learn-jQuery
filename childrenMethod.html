@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>childrenMethod</title>
+
+</head>
+<body>
+	<div>
+		<p>p</p>
+		<p>p</p>
+		<p>p</p>
+	</div>
+	<p>p</p>
+	<p>p</p>
+	<p>p</p>
+
+	<script type="text/javascript" src="scripts/jquery.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$('div > p').css('color','red');
+
+		// 等价方法
+		$('div').children('p').css('color','blue');
+	});
+	</script>
+</body>
+</html>

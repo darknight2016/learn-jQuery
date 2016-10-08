@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css操作2</title>
+	<script type="text/javascript" src="scripts/jquery.js"></script>
+
+</head>
+<body>
+	<div title="aaa">aaa</div>
+	<div title="bbb">bbb</div>
+
+	<script type="text/javascript">
+		$(function(){
+			alert(typeof $('div').css('width'));
+
+											 //   padding border margin
+			alert($('div').width());		 //   200     200    200
+			alert($('div').innerWidth());    //   400     400    400
+			alert($('div').outerWidth());    //   400     600    600
+			alert($('div').outerWidth(true));//   400     600    600
+
+			offset()//获取某个元素相对于视口的偏移位置
+			position()//获取某个元素相对于父元素的偏移位置
+			scrollTop()//获取垂直滚动条的值
+			scrollTop(value)//设置滚动条的值
+			scrollLeft()//获取水平滚动条的值
+			scrollLeft(value)//设置水平滚动条的值
+		});
+	</script>
+</body>
+</html>

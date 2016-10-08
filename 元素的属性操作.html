@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>元素的属性操作</title>
+	<script type="text/javascript" src="scripts/jquery.js"></script>
+
+</head>
+<body>
+	<div id="box">
+		yzp is handsome!
+	</div>
+
+	<script type="text/javascript">
+		$(function(){
+			// 获取属性
+			alert($('#box').attr('id'));
+			// 设置元素属性
+			$('#box').attr('id','pox');
+			$('#pox').attr({
+				'title': 'yzp is handsome',
+				'class': 'red',//class不建议用attr设置，后面有强大的方法代替
+				'data': '123'
+			});
+
+			$('div').attr('title',function(index,value){
+				// return 'yzp is handsome';
+				return 'i am' + index;				
+			});
+		});
+	</script>
+</body>
+</html>

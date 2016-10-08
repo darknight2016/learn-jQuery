@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>过滤选择器</title>
+
+</head>
+<body>
+	<ul>
+		<li>列表1</li>
+		<li>列表2</li>
+		<li>列表3</li>
+		<li>列表4</li>
+		<li>列表5</li>
+		<li>列表6</li>
+	</ul>
+
+	<ul>
+		<li>列表1</li>
+		<li>列表2</li>
+		<li>列表3</li>
+		<li>列表4</li>
+		<li>列表5</li>
+		<li>列表6</li>
+	</ul>
+	<input type="text" name="test">
+	<div style="display: none;">杨志鹏是个大帅哥</div>
+	<div>杨志鹏</div>
+
+	<script type="text/javascript" src='scripts/jquery.js'></script>
+	<script type="text/javascript">
+		$(function(){
+			$('li:first').css('background','#ccc');
+			$('li:last').css('background','red');
+			$('ul:first li:last').css('background','blue');
+			$('li:not(.red)').css('background','red');
+			$('li:even').css('background','green');
+			$('li:odd').css('background','yellow');
+			$('li:eq(-2)').css('background','dark');
+			$('li:gt(-2)').css('background','white');
+			$('li:lt(3)').css('background','red');
+			$('li :header').css('background','#ccc');
+			// 这里要先聚焦再去选取元素
+			$('input').get(0).focus();
+			$('input:focus').css('background','red');
+
+			// 常用过滤选择器
+			// first和last需要指明父元素
+			$('li').first().css('background','#ccc');
+			$('li').last().css('background','#ccc');
+			$('li').not().css('background','#ccc');
+			$('li').eq(2).css('background','#ccc');
+
+			// 内容选择器
+			$('div:contains("杨志鹏")').css('background','#ccc');
+			$('div:empty').css('background','#ccc');
+			$('div:has(.red)').css('background','#ccc');
+			$('div:parent').css('background','#ccc');
+			// 有子元素的
+			$('div').parent().css('background','red');
+			$('div').parents().css('background','blue');
+			$('div').parentsUntil('body').css('background','blue');
+
+			alert($('div:hidden').size());
+			$('div:hidden').show(1000);
+
+
+			// 子元素选择器
+			$('.red').is('li');
+			// 可以是jQuery对象，可以是dom对象
+			// 也可以是函数
+			$('.red')is(function(){
+				return $(this).attr('title') == '列表3';
+				// 注意：必须使用$(this)返回调用元素，否则与元素无关了
+			});
+
+			// slice方法
+			$('li').slice(1,8).css('background','red');
+			$('li').filter(function(){
+				return $(this).attr(title) == '列表';
+			});
+		});
+	</script>
+</body>
+</html>

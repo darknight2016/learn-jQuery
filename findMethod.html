@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>find方法</title>
+
+</head>
+<body>
+	<div id="father">
+		<p class="son">son</p>
+		<p class="son">son</p>
+		<p class="son">son</p>
+	</div>
+
+	<script type="text/javascript" src="scripts/jquery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#father p').css('color','red');
+			//后代选择器的等价方法
+			$('#father').find('p').css('color','blue');
+		});
+	</script>
+</body>
+</html>

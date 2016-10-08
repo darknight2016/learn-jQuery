@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>nextMethod</title>
+
+</head>
+<body>
+	<p>p</p>
+	<p>p</p>
+	<p>p</p>
+	<div>div</div>
+	<strong>strong</strong>
+	<p>p</p>
+	<p>p</p>
+	<p>p</p>
+
+	<script type="text/javascript" src="scripts/jquery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('div + p').css('color','red');
+
+			//等价方法
+			$('div').next('p').css('color','blue');
+
+			// nextAll方法
+			$('div').nextAll('p').css('color','red');
+			$('div ~ p').css('color','blue');
+
+			// prev方法
+			$('div').prev().css('color','red');
+			// 括号留空表示传递的是*号
+			// prevAll方法
+			$('div').prevAll('p').css('color','blue');
+
+			// 上下同级
+			$('div').siblings('p').css('color','red');
+
+			// nextUntil方法,直到结束，p不在内
+			$('div').nextUntil('p');
+			// prevUntil方法
+			$('div').prevUntil('p');
+
+		});
+
+		// 后者的方法都要快于高级选择器，因为前者需要解析字符串，内部算法不同
+		// 
+		// 
+		// 速度排名
+		$('#box').find('p');
+		$('p','#box');//5-10
+		$('#box').children('p');//50
+		$('#box > p');//需要使用sizzle引擎 70
+		$('#box p');//77
+		$('p',$('#box'));//23
+
+		// 优化，使用变量赋值
+	</script>
+</body>
+</html>
