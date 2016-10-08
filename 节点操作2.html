@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>节点操作2</title>
+	<script type="text/javascript" src="scripts/jquery.js"></script>
+
+</head>
+<body>
+	<div>yzp is handsome!</div>
+	<strong>yzp is handsome!</strong>
+	<div>hahaha</div>
+
+	<script type="text/javascript">
+		$(function(){
+			// $('div').wrap('<strong class="b"></strong>');
+			// $('div').wrap('<strong />');
+			// $('div').wrap('<strong><em>123</em></strong>');
+
+			// $('div').wrap($('strong').get(0));
+
+			// 创建节点
+			// 原生js
+			// var strong = document.createElement('strong');
+
+			// $('div').wrap(function(index){
+				// return 
+			// });
+
+			// unwrap移除包裹
+			// wrapAll将所有元素一起包裹
+			$('div').wrapAll('<strong></strong>');
+			
+			// wrapInner()
+			// 复制克隆
+			$('div').click(function(){
+				alert('yzp is handsome!');
+			});
+			// 没有参数，没有事件处理
+			$('div').clone().appendTo('body');
+			$('div').clone(true).appendTo('body');
+			// 删除节点
+			$('div').remove('.box');//事件移除
+			$('div').detach().appendTo('body');//事件保留
+
+			// 清空节点
+			$('div').empty();
+
+			// 替换节点
+			$('div').replaceWith('<span>DOM</span>');
+			$('<span>DOM</span>').replaceAll('div');
+		});
+	</script>
+</body>
+</html>
